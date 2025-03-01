@@ -1,0 +1,112 @@
+/* Import Premium Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
+
+body {
+    background: linear-gradient(to right, #000428, #004e92);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Glassmorphism Card */
+.about-container {
+    max-width: 750px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Neon Border Animation */
+.about-container::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    z-index: -1;
+    border-radius: 20px;
+    opacity: 0.6;
+    animation: glow 5s infinite alternate;
+}
+
+/* Glow Effect */
+@keyframes glow {
+    0% { filter: blur(8px); }
+    100% { filter: blur(16px); }
+}
+
+/* Heading Style */
+.about-container h2 {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #ff00ff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* About Text */
+.about-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f2f2f2;
+    text-align: justify;
+}
+
+/* Animated Text Effect */
+.about-container p::first-letter {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00ffff;
+}
+
+/* Button Style */
+.explore-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(255, 0, 255, 0.5);
+}
+
+.explore-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        width: 90%;
+        padding: 25px;
+    }
+    .about-container h2 {
+        font-size: 30px;
+    }
+}
