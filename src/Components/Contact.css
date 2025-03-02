@@ -1,4 +1,4 @@
-/* Import Premium Font */
+/* Import Stylish Font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
 
 body {
@@ -10,9 +10,74 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    flex-direction: column;
 }
 
-/* Glassmorphism Card */
+.contact {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.contact h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #8d0b29e8;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 15px 0;
+}
+
+.input-box label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.field, .fieldmess {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(98, 135, 151, 0.2);
+    color: white;
+    outline: none;
+}
+
+button {
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+}
+
 .contact-container {
     max-width: 650px;
     background: rgba(255, 255, 255, 0.1);
@@ -24,43 +89,15 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
-    animation: fadeIn 1s ease-in-out;
 }
 
-/* Neon Border Animation */
-.contact-container::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, #ff00ff, #00ffff);
-    z-index: -1;
-    border-radius: 20px;
-    opacity: 0.6;
-    animation: glow 5s infinite alternate;
-}
-
-/* Glow Effect */
-@keyframes glow {
-    0% { filter: blur(8px); }
-    100% { filter: blur(16px); }
-}
-
-/* Heading Style */
 .contact-container h2 {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 800;
     margin-bottom: 15px;
-    color: #cb09cb;
+    color: #eb08ebc7;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-}
-
-/* Contact Details */
-.contact-details {
-    margin-top: 20px;
 }
 
 .contact-details p {
@@ -72,14 +109,12 @@ body {
     color: #f2f2f2;
 }
 
-/* Stylish Links */
 .contact-container a {
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
     transition: all 0.3s ease;
     color: #00ffff;
-    position: relative;
 }
 
 .contact-container a:hover {
@@ -87,9 +122,8 @@ body {
     text-shadow: 0 0 12px rgba(255, 0, 255, 0.8);
 }
 
-/* Social Links - Buttons */
 .social-links {
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -105,41 +139,42 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    display: inline-block;
 }
 
 .social-links a:hover {
     background: linear-gradient(45deg, #ff00ff, #00ffff);
     color: black;
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
 }
 
-/* Info Section */
 .info {
     margin-top: 25px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(236, 203, 203, 0.1);
     border-radius: 10px;
     font-size: 16px;
     font-weight: 400;
     color: #ddd;
 }
 
-/* Fade-in Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-    .contact-container {
+    .contact-container, .contact {
         width: 90%;
         padding: 20px;
     }
     .contact-container h2 {
-        font-size: 28px;
+        font-size: 26px;
+    }
+    .field, .fieldmess {
+        font-size: 14px;
+        padding: 10px;
+    }
+    button {
+        font-size: 16px;
     }
 }
